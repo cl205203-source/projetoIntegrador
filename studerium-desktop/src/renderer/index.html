@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STUDERIUM - Moderador</title>
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ LOGIN (RF06) ============ -->
+<section id="tela-login" class="login-wrap">
+  <div class="login-painel">
+    <div class="login-marca">
+      <i class="bi bi-mortarboard-fill"></i>
+      <h1>STUDERIUM</h1>
+      <p>Plataforma Learning Analytics para o bem-estar discente.</p>
+    </div>
+    <div class="login-form">
+      <h2>Acesso do moderador</h2>
+      <p class="text-muted mb-4">Entre com o e-mail e a senha de administrador.</p>
+      <form id="form-login" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="login-email">E-mail</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+            <input class="form-control" type="email" id="login-email" maxlength="150" autocomplete="username" required autofocus>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="login-senha">Senha</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input class="form-control" type="password" id="login-senha" maxlength="72" autocomplete="current-password" required>
+            <button class="btn btn-outline-secondary" type="button" id="login-ver" title="Mostrar/ocultar senha"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <div id="login-erro" class="alert alert-danger py-2 d-none" role="alert"></div>
+        <button class="btn btn-primary w-100 py-2" type="submit" id="login-btn">Entrar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APLICAÇÃO ============ -->
+<section id="tela-app" class="d-none">
+  <div class="app-layout">
+    <nav class="sidebar">
+      <div class="sidebar-marca"><i class="bi bi-mortarboard-fill"></i> STUDERIUM</div>
+      <div id="menu" class="sidebar-menu"></div>
+      <div class="sidebar-rodape">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <i class="bi bi-person-circle fs-4"></i>
+          <div class="text-truncate">
+            <div id="usuario" class="fw-semibold text-truncate"></div>
+            <small class="opacity-75">Administrador</small>
+          </div>
+        </div>
+        <button id="btn-sair" class="btn btn-sm btn-outline-light w-100"><i class="bi bi-box-arrow-right"></i> Sair</button>
+      </div>
+    </nav>
+
+    <main class="conteudo">
+      <header class="topo">
+        <div>
+          <h2 id="titulo" class="mb-0"></h2>
+          <div id="subtitulo" class="text-muted"></div>
+        </div>
+        <div id="acoes-topo" class="d-flex gap-2">
+          <div class="input-group busca">
+            <span class="input-group-text"><i class="bi bi-search"></i></span>
+            <input id="busca" class="form-control" type="search" placeholder="Buscar..." maxlength="100">
+          </div>
+          <button id="btn-novo" class="btn btn-primary text-nowrap"><i class="bi bi-plus-lg"></i> <span id="btn-novo-texto">Novo</span></button>
+        </div>
+      </header>
+
+      <!-- Início -->
+      <div id="view-inicio" class="d-none">
+        <div id="cards" class="row g-3 mb-4"></div>
+        <div class="card painel">
+          <div class="card-body">
+            <h5 class="mb-3"><i class="bi bi-signpost-split"></i> Primeiros passos</h5>
+            <ol class="passos mb-0">
+              <li><b>Turmas:</b> crie as turmas da instituição (ex.: "1º Ano A").</li>
+              <li><b>Disciplinas:</b> crie as disciplinas de cada turma.</li>
+              <li><b>Alunos:</b> cadastre cada aluno com uma turma, e-mail e senha de acesso.</li>
+              <li><b>Professores:</b> cadastre os professores e marque as turmas/disciplinas que lecionam.</li>
+              <li><b>Administradores:</b> cadastre outros moderadores, se necessário.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Listagem -->
+      <div id="view-lista" class="d-none">
+        <div id="aviso-turma" class="alert alert-warning d-none align-items-center justify-content-between">
+          <span><i class="bi bi-exclamation-triangle"></i> Nenhuma turma cadastrada. Crie uma turma antes de continuar.</span>
+          <button class="btn btn-sm btn-secondary" data-ir="turmas">Ir para Turmas</button>
+        </div>
+        <div class="card painel">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead id="thead"></thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+          <div class="card-footer small text-muted" id="rodape-tabela"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ============ MODAL FORMULÁRIO ============ -->
+<div class="modal fade" id="modal-form" tabindex="-1" data-bs-backdrop="static">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <form id="form" class="modal-content" novalidate>
+      <div class="modal-header">
+        <h5 class="modal-title" id="form-titulo"></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <div id="form-erro" class="alert alert-danger py-2 d-none" role="alert"></div>
+        <div id="form-campos" class="row g-3"></div>
+        <div class="small text-muted mt-3">Campos com * são obrigatórios.</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" id="form-salvar"><i class="bi bi-check-lg"></i> Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ MODAL CONFIRMAÇÃO ============ -->
+<div class="modal fade" id="modal-confirma" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar exclusão</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body" id="confirma-texto"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-secondary" id="confirma-ok"><i class="bi bi-trash"></i> Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ AVISOS ============ -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="toast" class="toast align-items-center border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body" id="toast-texto"></div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+    </div>
+  </div>
+</div>
+
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
