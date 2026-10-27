@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studerium - Learning Analytics</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho Principal -->
+    <header class="main-header">
+        <div class="header-logo-container" id="logo-home-btn">
+            <img src="imagens/logoStuderium.png" alt="Studerium Logo" class="project-logo-round">
+            <div class="logo-text-brand">
+                <h1>Studerium</h1>
+                <span>Learning Analytics</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">HOME</a>
+            <a href="#proposta">A PROPOSTA</a>
+            <a href="#objetivo">OBJETIVO</a>
+            <a href="#pilares">PILARES</a>
+            <a href="#como-funciona">COMO FUNCIONA</a>
+            <a href="#perfis">PERFIS</a>
+            <a href="#privacidade">PRIVACIDADE</a>
+            <a href="#sobre-nos">SOBRE NÓS</a>
+            <a href="#referencias">REFERÊNCIAS</a>
+            <a href="login.html" target="_blank" class="nav-login-btn">LOGIN</a>
+</nav>
+    </header>
+
+    <main class="landing-content">
+        <!-- Hero / Apresentação Inicial -->
+        <section class="hero-section">
+            <h2>Muito além das médias: uma visão humana sobre o aprendizado.</h2>
+            <p class="hero-subtitle">Conectando o desempenho dos estudantes ao seu bem-estar físico e emocional para construir uma verdadeira rede de apoio docente.</p>
+        </section>
+
+        <!-- SEÇÃO EXPANDIDA 1: O Desafio da Evasão & Contexto Teórico -->
+        <section id="proposta" class="info-block-section">
+            <div class="info-container">
+                <div class="info-text">
+                    <span class="badge-tag">Contexto e Problemática</span>
+                    <h3>De dados ao diálogo: a urgência de humanizar o ensino</h3>
+                    <p>
+                        De acordo com dados do <strong>IBGE (2024)</strong>, cerca de <strong>9,1 milhões de jovens</strong> abandonaram a escola sem concluir a educação básica no Brasil. Diante desse cenário alarmante, surge a questão essencial: <em>como a tecnologia educacional pode atuar ativamente na redução da taxa de evasão escolar?</em>
+                    </p>
+                    <p>
+                        Apesar do avanço de ferramentas como Big Data e Learning Analytics (SIEMENS, 2013), a coleta desenfreada de métricas sem reflexão crítica pode conduzir a uma <strong>educação tecnocrática</strong> (SELWYN, 2016), onde números frios substituem a sensibilidade pedagógica.
+                    </p>
+                </div>
+                <div class="info-card-highlight">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p class="quote-body">
+                        "Tratamos os alunos como se fossem iguais, mas a diversidade de culturas, modos de vida e relações com o conhecimento é enorme."
+                    </p>
+                    <span class="quote-author">— Philippe Perrenoud (2000)</span>
+                </div>
+            </div>
+
+            <div class="text-expansion-box">
+                <h4>Combate ao "Fetichismo de Dados"</h4>
+                <p>
+                    Quando reduzimos a aprendizagem a notas e faltas, ocorre o fenômeno da "fetichização de dados", negligenciando o ritmo pessoal do estudante, a sua saúde física e emocional e as suas vulnerabilidades sociais. O <strong>Studerium</strong> nasce para preencher essa lacuna: unimos o potencial analítico à construção ativa e humanizada do conhecimento (PAPERT, 1980), transformando métricas em estratégias pedagógicas empáticas.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- OBJETIVO GERAL E PRÉVIA DO SISTEMA -->
+        <section id="objetivo" class="objetivo-section">
+
+            <div class="objetivo-texto">
+                <span class="badge-tag">Nosso objetivo</span>
+
+                <h3>Transformar dados em oportunidades de aprendizagem</h3>
+
+                <p>
+                    O STUDERIUM tem como objetivo apoiar a prevenção da evasão
+                    escolar por meio da análise contextualizada de dados
+                    educacionais, unindo indicadores de desempenho acadêmico
+                    às experiências e necessidades dos estudantes.
+                </p>
+
+                <p>
+                    A plataforma busca auxiliar os professores na identificação
+                    de possíveis dificuldades de aprendizagem, incentivando
+                    estratégias pedagógicas mais inclusivas, empáticas e
+                    adequadas à realidade de cada aluno.
+                </p>
+
+                <p>
+                    Acreditamos que os dados devem servir como ponto de partida
+                    para o diálogo, e não como uma definição da capacidade
+                    de um estudante.
+                </p>
+            </div>
+
+            <!-- Prévia ilustrativa do painel -->
+            <div class="dashboard-preview">
+
+                <div class="dashboard-header">
+                    <div>
+                        <span class="dashboard-label">STUDERIUM</span>
+                        <h4>Painel do professor</h4>
+                        <p>Visão geral da aprendizagem</p>
+                    </div>
+
+                    <i class="fa-solid fa-chart-line dashboard-main-icon"></i>
+                </div>
+
+                <p class="dashboard-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Exemplo ilustrativo com dados fictícios
+                </p>
+
+                <div class="dashboard-metrics">
+
+                    <div class="metric-card">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Estudantes</span>
+                        <strong>120</strong>
+                    </div>
+
+                    <div class="metric-card">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Turmas</span>
+                        <strong>4</strong>
+                    </div>
+
+                    <div class="metric-card">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Relatórios</span>
+                        <strong>8</strong>
+                    </div>
+
+                    <div class="metric-card">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Pontos de atenção</span>
+                        <strong>5</strong>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-example">
+                    <h4>Exemplo de acompanhamento</h4>
+
+                    <p>
+                        Uma mudança no desempenho pode indicar a necessidade
+                        de uma análise pedagógica mais cuidadosa.
+                    </p>
+
+                    <div class="performance-bars">
+
+                        <div class="performance-item">
+                            <span>1º período</span>
+                            <div class="performance-track">
+                                <div class="performance-fill fill-78"></div>
+                            </div>
+                            <strong>78%</strong>
+                        </div>
+
+                        <div class="performance-item">
+                            <span>2º período</span>
+                            <div class="performance-track">
+                                <div class="performance-fill fill-74"></div>
+                            </div>
+                            <strong>74%</strong>
+                        </div>
+
+                        <div class="performance-item">
+                            <span>3º período</span>
+                            <div class="performance-track">
+                                <div class="performance-fill fill-68"></div>
+                            </div>
+                            <strong>68%</strong>
+                        </div>
+
+                        <div class="performance-item">
+                            <span>4º período</span>
+                            <div class="performance-track">
+                                <div class="performance-fill fill-73"></div>
+                            </div>
+                            <strong>73%</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="dashboard-insight">
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        <p>
+                            <strong>Possibilidade de reflexão:</strong>
+                            investigar mudanças no desempenho e considerar
+                            estratégias de apoio adequadas à turma.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- BENEFÍCIOS POR PERFIL -->
+        <section id="perfis" class="perfis-section">
+
+            <h3 class="section-title-center">
+                Uma plataforma para diferentes necessidades
+            </h3>
+
+            <p class="section-subtitle-center">
+                Cada perfil tem ferramentas e responsabilidades específicas
+                para contribuir com uma aprendizagem mais humanizada.
+            </p>
+
+            <div class="perfis-grid">
+
+                <article class="perfil-card perfil-aluno">
+                    <div class="perfil-icon">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+
+                    <h4>Para os estudantes</h4>
+
+                    <p>
+                        Um espaço para registrar interesses acadêmicos,
+                        compartilhar voluntariamente fatores que interferem
+                        na aprendizagem e participar ativamente da construção
+                        de um ambiente escolar mais acolhedor.
+                    </p>
+
+                    <ul>
+                        <li>Acompanhamento da trajetória acadêmica</li>
+                        <li>Registro de interesses e dificuldades</li>
+                        <li>Autonomia sobre o compartilhamento de informações</li>
+                    </ul>
+                </article>
+
+                <article class="perfil-card perfil-professor">
+                    <div class="perfil-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+
+                    <h4>Para os professores</h4>
+
+                    <p>
+                        Ferramentas para acompanhar o desempenho das turmas,
+                        identificar mudanças relevantes e refletir sobre
+                        estratégias pedagógicas adequadas às necessidades
+                        dos estudantes.
+                    </p>
+
+                    <ul>
+                        <li>Registro de notas e faltas</li>
+                        <li>Relatórios personalizados de aprendizagem</li>
+                        <li>Registro e acompanhamento de estratégias</li>
+                    </ul>
+                </article>
+
+                <article class="perfil-card perfil-moderador">
+                    <div class="perfil-icon">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <h4>Para os moderadores</h4>
+
+                    <p>
+                        Recursos administrativos para organizar a estrutura
+                        escolar e gerenciar os usuários, respeitando as
+                        permissões e as regras de proteção dos dados.
+                    </p>
+
+                    <ul>
+                        <li>Cadastro de alunos e professores</li>
+                        <li>Gerenciamento de turmas e disciplinas</li>
+                        <li>Supervisão de acessos e configurações</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- SEÇÃO: Pilares do Projeto -->
+        <section id="pilares" class="pilares-section">
+            <h3>Nossos Pilares Fundamentais:</h3>
+            <div class="pilares-grid">
+                <div class="pilar-card">
+                    <div class="pilar-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Cruzamento Quanti-Quali</h4>
+                    <p>Dados frios ganham calor humano com feedbacks qualitativos e relatos integrados dos alunos.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h4>Alertas de Risco</h4>
+                    <p>Identifique precocemente sinais de desengajamento, queda de rendimento ou vulnerabilidade emocional.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <h4>Registro de Estratégias</h4>
+                    <p>Acompanhe e valide a eficácia de cada intervenção pedagógica realizada junto às turmas.</p>
+                </div>
+                <div class="pilar-card">
+                    <div class="pilar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Privacidade & LGPD</h4>
+                    <p>Segurança para dados sensíveis, com autonomia do aluno e anonimização garantida.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO EXPANDIDA 2: Como Funciona o Sistema -->
+        <section id="como-funciona" class="features-detail-section">
+            <h3 class="section-title-center">Como o Studerium Funciona na Prática</h3>
+            <p class="section-subtitle-center">Um ecossistema completo desenhado para conectar discentes, docentes e responsáveis.</p>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-header">
+                        <i class="fa-solid fa-id-card-clip"></i>
+                        <h4>Múltiplos Perfis de Acesso</h4>
+                    </div>
+                    <p>Plataforma integrada com permissões específicas para <strong>Professores</strong>, <strong>Alunos</strong>, <strong>Responsáveis</strong> e <strong>Administradores</strong>, garantindo gestão segura e colaborativa.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-header">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h4>Espaço de Escuta Discente</h4>
+                    </div>
+                    <p>Área exclusiva para os alunos registram voluntariamente fatores pessoais, emocionais ou de saúde que interferem na aprendizagem, além de compartilharem seus interesses acadêmicos.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-header">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <h4>Autonomia e Anonimização</h4>
+                    </div>
+                    <p>Em conformidade rigorosa com a LGPD, o discente tem total autonomia para decidir quando e como divulgar suas informações ao corpo docente.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-header">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <h4>Relatórios Diagnósticos</h4>
+                    </div>
+                    <p>Geração de relatórios personalizados que cruzam métricas acadêmicas tradicionais com dados qualitativos, servindo de base para planejamentos pedagógicos adaptados.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PRIVACIDADE E TRANSPARÊNCIA -->
+        <section id="privacidade" class="privacidade-section">
+
+            <div class="privacidade-intro">
+                <div class="privacidade-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+                    <span class="badge-tag">Privacidade e confiança</span>
+
+                    <h3>Os dados devem acolher, não rotular.</h3>
+
+                    <p>
+                        A tecnologia deve estar a serviço das pessoas.
+                        Por isso, o Studerium considera a privacidade,
+                        a transparência e a autonomia dos estudantes
+                        princípios fundamentais.
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacidade-grid">
+
+                <div class="privacidade-item">
+                    <i class="fa-solid fa-hand"></i>
+                    <h4>Autonomia do estudante</h4>
+                    <p>
+                        O aluno poderá optar por não responder às perguntas
+                        sobre fatores pessoais que interferem na aprendizagem.
+                    </p>
+                </div>
+
+                <div class="privacidade-item">
+                    <i class="fa-solid fa-user-lock"></i>
+                    <h4>Compartilhamento consciente</h4>
+                    <p>
+                        O acesso às informações qualitativas deverá respeitar
+                        as permissões estabelecidas e as condições de
+                        consentimento aplicáveis.
+                    </p>
+                </div>
+
+                <div class="privacidade-item">
+                    <i class="fa-solid fa-key"></i>
+                    <h4>Acesso restrito</h4>
+                    <p>
+                        Cada perfil deverá acessar somente os dados necessários
+                        às suas atribuições, de acordo com as permissões
+                        definidas para o sistema.
+                    </p>
+                </div>
+
+                <div class="privacidade-item">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h4>Uso responsável dos dados</h4>
+                    <p>
+                        Os indicadores servem para apoiar a reflexão pedagógica.
+                        Não devem ser utilizados isoladamente para julgar
+                        a capacidade ou determinar o futuro de um estudante.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="privacidade-aviso">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <p>
+                    O tratamento de dados deverá observar a Lei Geral de
+                    Proteção de Dados Pessoais (LGPD), com medidas adequadas
+                    de segurança, transparência e proteção das informações.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- SEÇÃO: Sobre Nós (Apresentação da Equipe) -->
+        <section id="sobre-nos" class="team-section">
+            <h3 class="section-title-center">Quem Somos?</h3>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar-container">
+                        <img src="imagens/bia.png" alt="Beatriz Spinosa" class="avatar-img">
+                    </div>
+                    <div class="team-card-info">
+                        <h3>Beatriz Spinosa</h3>
+                        <p>Gerente de equipe, back-end, banco de dados.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="avatar-container">
+                        <img src="imagens/carol.png" alt="Caroline Hergert" class="avatar-img">
+                    </div>
+                    <div class="team-card-info">
+                        <h3>Caroline Hergert</h3>
+                        <p>Back-end, banco de dados.<br><br></p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="avatar-container">
+                        <img src="imagens/isa.png" alt="Isabela Amadio" class="avatar-img">
+                    </div>
+                    <div class="team-card-info">
+                        <h3>Isabela Amadio</h3>
+                        <p>Front-end, back-end, banco de dados.<br><br></p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="avatar-container">
+                        <img src="imagens/gabi.png" alt="Gabriela Reis" class="avatar-img">
+                    </div>
+                    <div class="team-card-info">
+                        <h3>Gabriela Reis</h3>
+                        <p>Back-end, front-end.<br><br></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REFERÊNCIAS BIBLIOGRÁFICAS -->
+        <section id="referencias" class="referencias-section">
+
+            <span class="badge-tag">Fundamentação teórica</span>
+
+            <h3>Referências bibliográficas</h3>
+
+            <p class="referencias-intro">
+                As ideias que fundamentam o Studerium dialogam com estudos
+                sobre tecnologia educacional, aprendizagem e análise crítica
+                dos dados.
+            </p>
+
+            <div class="referencias-lista">
+
+                <article class="referencia-item">
+                    <h4>IBGE — Instituto Brasileiro de Geografia e Estatística</h4>
+                    <p>
+                        Publicações e indicadores sobre educação no Brasil.
+                        A publicação específica que sustenta o dado sobre
+                        os 9,1 milhões de jovens deve ser identificada
+                        e citada conforme a fonte original consultada.
+                    </p>
+                </article>
+
+                <article class="referencia-item">
+                    <h4>PAPERT, Seymour (1980)</h4>
+                    <p>
+                        <em>Mindstorms: Children, Computers, and Powerful Ideas.</em>
+                        New York: Basic Books, 1980.
+                    </p>
+                </article>
+
+                <article class="referencia-item">
+                    <h4>PERRENOUD, Philippe (2000)</h4>
+                    <p>
+                        <em>10 novas competências para ensinar.</em>
+                        Porto Alegre: Artmed, 2000.
+                    </p>
+                </article>
+
+                <article class="referencia-item">
+                    <h4>SELWYN, Neil (2016)</h4>
+                    <p>
+                        <em>Education and Technology: Key Issues and Debates.</em>
+                        2. ed. London: Bloomsbury Academic, 2016.
+                    </p>
+                </article>
+
+                <article class="referencia-item">
+                    <h4>SIEMENS, George (2013)</h4>
+                    <p>
+                        Learning Analytics: The Emergence of a Discipline.
+                        <em>American Behavioral Scientist</em>,
+                        v. 57, n. 10, p. 1380–1400, 2013.
+                    </p>
+                </article>
+
+            </div>
+
+            <p class="referencias-observacao">
+                As referências devem ser conferidas com a bibliografia
+                completa utilizada no TCC antes da versão final.
+            </p>
+
+        </section>
+
+            <div class="about-description">
+                <p>Estudamos desenvolvimento de sistemas no <strong>COTIL</strong>, sendo este o nosso projeto integrador, que tem por objetivo combater a evasão escolar, transformando métricas acadêmicas e relatos emocionais dos alunos em relatórios críticos que apoiam o professor na criação de estratégias pedagógicas humanizadas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; Studerium - Learning Analytics | Projeto Integrador COTIL</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studerium - Turma Selecionada</title>
+<link rel="stylesheet" href="turma-selecionada.css">
+<link rel="stylesheet" href="integracao.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="app-header">
+<h1 class="app-title" id="turma-title-header">Turmas - turma selecionada</h1>
+<a href="turmas.html" class="icon-btn" title="Voltar para Turmas"><i class="fa-solid fa-house"></i></a>
+</header>
+<main class="turma-detalhes-content">
+<div class="turma-main-layout">
+<section class="left-section">
+<div class="search-bar"><input type="text" id="search-input" placeholder="Pesquisar aluno..."><i class="fa-solid fa-magnifying-glass"></i></div>
+<div class="alunos-table-container">
+<div class="table-header"><span class="col-nome">Nome</span><span class="col-ra">RA</span></div>
+<div id="alunos-list"></div>
+</div>
+</section>
+<aside class="right-panel">
+<div class="side-menu-card">
+<h3>Gerenciar Turma</h3>
+<a class="btn-blue-pill" href="gerenciarTrabalhos.html">Gerenciar Trabalhos</a>
+<a class="btn-blue-pill" href="faltas.html">Lançar Faltas</a>
+<a class="btn-blue-pill" href="notas.html">Lançar Notas</a>
+<a class="btn-blue-pill" href="Relatorio.html">Verificar Relatório</a>
+<a class="btn-blue-pill" href="estrategiasAdaptadas.html">Estratégias Adaptadas</a>
+</div>
+</aside>
+</div>
+</main>
+<script src="app.js"></script>
+<script>
+const turma = params.get('turma');
+if (turma) $('#turma-title-header').textContent = `Turmas - turma ${turma}`;
+
+function renderAlunos(){
+ const busca = $('#search-input').value.trim().toLowerCase();
+ const lista = alunos()
+   .filter(a => a.nome.toLowerCase().includes(busca) || a.ra.includes(busca))
+   .sort((a,b) => b.prioridade-a.prioridade || a.nome.localeCompare(b.nome));
+ $('#alunos-list').innerHTML = lista.length ? lista.map(a => `
+   <div class="table-row">
+     <div class="col-nome-content">
+       <span>${esc(a.nome)} ${a.prioridade ? '<i class="fa-solid fa-star star-icon" title="Prioridade"></i>' : ''}</span>
+       <a class="btn-blue-action" style="text-decoration:none" href="alunoSelecionado.html?ra=${encodeURIComponent(a.ra)}">Gerenciar Aluno</a>
+     </div>
+     <div class="col-ra-content">${esc(a.ra)}</div>
+   </div>`).join('') : '<p style="padding:15px">Nenhum aluno encontrado.</p>';
+}
+$('#search-input').addEventListener('input', renderAlunos);
+renderAlunos();
+</script>
+</body>
+</html>

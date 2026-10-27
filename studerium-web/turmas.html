@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studerium - Turmas</title>
+    <link rel="stylesheet" href="turmas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1 class="app-title">Turmas</h1>
+        <div class="app-header-icons">
+            <a href="notificacoes.html" class="icon-btn" title="Notificações">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <button type="button" class="icon-btn" id="user-icon-btn" title="Perfil">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </div>
+
+        <!-- Popup Menu do Usuário -->
+        <div id="user-dropdown" class="user-dropdown hidden">
+            <p>Logado como:<br><strong id="logged-user-name">*USUÁRIO*</strong></p>
+            <div class="dropdown-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <a href="login.html" class="btn-yellow-small">Sair</a>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <div class="turmas-grid">
+            <a href="turma-selecionada.html?turma=1" class="turma-btn">turma 1</a>
+            <a href="turma-selecionada.html?turma=2" class="turma-btn">turma 2</a>
+            <a href="turma-selecionada.html?turma=3" class="turma-btn">turma 3</a>
+            <a href="turma-selecionada.html?turma=4" class="turma-btn">turma 4</a>
+            <a href="turma-selecionada.html?turma=5" class="turma-btn">turma 5</a>
+            <a href="turma-selecionada.html?turma=6" class="turma-btn">turma 6</a>
+            <a href="turma-selecionada.html?turma=7" class="turma-btn">turma 7</a>
+            <a href="turma-selecionada.html?turma=8" class="turma-btn">turma 8</a>
+            <a href="turma-selecionada.html?turma=9" class="turma-btn">turma 9</a>
+        </div>
+    </main>
+
+    <script src="turmas.js"></script>
+</body>
+</html>

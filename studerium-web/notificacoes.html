@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studerium - Notificações</title>
+    <link rel="stylesheet" href="notificacoes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1 class="app-title">Notificações</h1>
+        <a href="turmas.html" class="icon-btn" title="Voltar para Turmas">
+            <i class="fa-solid fa-house"></i>
+        </a>
+    </header>
+
+    <main class="notificacoes-content">
+        <div class="notifications-grid">
+            <div class="notification-card" data-notification-id="relatorio-aluno">
+                <div class="notification-body">
+                    Você recebeu um relatório do seguinte aluno
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-action check-btn" title="Lido"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-action cancel-btn" title="Excluir"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="notification-card" data-notification-id="prazo-correcao">
+                <div class="notification-body">
+                    O prazo para correção do trabalho é amanhã
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-action check-btn" title="Lido"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-action cancel-btn" title="Excluir"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <div class="notification-card" data-notification-id="retorno-solicitacao">
+                <div class="notification-body">
+                    Lembre de enviar um retorno a solicitação do aluno tal
+                </div>
+                <div class="notification-actions">
+                    <button class="btn-action check-btn" title="Lido"><i class="fa-solid fa-check"></i></button>
+                    <button class="btn-action cancel-btn" title="Excluir"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="notificacoes.js"></script>
+</body>
+</html>

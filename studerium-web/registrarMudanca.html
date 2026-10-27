@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Studerium - Registrar Mudança</title><link rel="stylesheet" href="turma-selecionada.css"><link rel="stylesheet" href="integracao.css"></head>
+<body><header class="app-header"><h1 class="app-title">Registrar Mudança</h1><a href="estrategiasAdaptadas.html" class="icon-btn">⌂</a></header>
+<main class="pi-container"><div class="pi-form-grid"><div class="pi-form-group"><label>Disciplina:</label><input class="pi-field" id="disciplina"></div><div class="pi-form-group"><label>Tipo de mudança:</label><input class="pi-field" id="mudanca"></div><div class="pi-form-group"><label>Resumo:</label><input class="pi-field" id="resumo"></div><div class="pi-form-group"><label>Status:</label><input class="pi-field" id="status"></div></div><div class="pi-actions" style="justify-content:center"><button class="btn-blue-pill" id="salvar">Salvar</button></div></main>
+<script src="app.js"></script><script>
+$('#salvar').onclick=()=>{const vals=['disciplina','mudanca','resumo','status'].map(id=>$('#'+id).value.trim());if(vals.some(v=>!v))return alert('Preencha todos os campos.');registrarEstratégia(...vals);location.href='estrategiasAdaptadas.html';};
+</script></body></html>

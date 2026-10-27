@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-yellow: #fbb040;
+    --primary-pink: #e63878;
+    --dark-blue: #132b50;
+}
+
+body {
+    background-color: #ffefd8;
+    min-height: 100vh;
+}
+
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-icon-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2.2rem;
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.home-icon-btn:hover {
+
+    color: var(--dark-blue);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px; /* Um pouco mais de padding fica melhor com o fundo branco */
+    
+    /* Alterado para branco e mantendo a sombra */
+    background-color: #ffffff; 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Sombra um pouco mais suave */
+    border-radius: 12px; 
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.login-header h2 {
+    color: var(--primary-pink);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.login-header p {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+}
+
+.login-logo-round {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pink-divider {
+    border: none;
+    border-top: 2px solid var(--primary-pink);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-pink);
+}
+
+.btn-yellow-submit {
+    width: 50%;
+    margin: 20px auto 0 auto;
+    display: block;
+    background-color: var(--primary-yellow);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-yellow-submit:hover {
+    background-color: #fca020;
+}

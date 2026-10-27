@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studerium - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-wrapper">
+        <a href="index.html" class="home-icon-btn" title="Voltar ao início">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <div class="login-card">
+            <div class="login-header">
+                <div>
+                    <h2>Bem-vindo(a)!</h2>
+                    <p>Faça login como professor:</p>
+                </div>
+                <img src="imagens/logoStuderium.png" alt="Studerium" class="login-logo-round">
+            </div>
+
+            <hr class="pink-divider">
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="user" required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="btn-yellow-submit">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

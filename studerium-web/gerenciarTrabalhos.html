@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Studerium - Trabalhos</title><link rel="stylesheet" href="turma-selecionada.css"><link rel="stylesheet" href="integracao.css"></head>
+<body><header class="app-header"><h1 class="app-title">Gerenciar Trabalhos</h1><a href="turma-selecionada.html" class="icon-btn">⌂</a></header>
+<main class="pi-container"><div class="pi-fields"><input class="pi-field" id="nome" placeholder="Nome do trabalho" style="flex:1"><input class="pi-field" id="prazo" type="date"><button class="btn-blue-pill" id="add">Atribuir</button></div><div id="lista"></div></main>
+<script src="app.js"></script><script>
+const trabalhos=()=>DB.get('trabalhos',[]);
+function render(){const t=trabalhos();$('#lista').innerHTML=t.length?t.map(w=>`<details class="pi-card" data-id="${w.id}" style="margin:10px 0;color:#000"><summary style="cursor:pointer;display:flex;justify-content:space-between;gap:10px"><span>${esc(w.nome)}</span><span>Prazo: ${fmt(w.prazo)}</span><span>Entregues: ${(w.entregues||[]).length}</span></summary><div style="padding:12px">${alunos().map(a=>`<label style="display:block;padding:5px"><input type="checkbox" data-ra="${esc(a.ra)}" ${(w.entregues||[]).includes(a.ra)?'checked':''}> ${esc(a.nome)}</label>`).join('')}</div></details>`).join(''):'<p class="pi-muted">Nenhum trabalho atribuído.</p>';}
+$('#add').onclick=()=>{const nome=$('#nome').value.trim(),prazo=$('#prazo').value;if(!nome||!prazo)return alert('Informe o trabalho e o prazo.');DB.set('trabalhos',[...trabalhos(),{id:Date.now(),nome,prazo,entregues:[]}]);$('#nome').value='';$('#prazo').value='';render();};
+$('#lista').addEventListener('change',e=>{const d=e.target.closest('details');if(!d)return;const t=trabalhos(),w=t.find(x=>x.id==d.dataset.id);w.entregues=[...d.querySelectorAll('input:checked')].map(i=>i.dataset.ra);DB.set('trabalhos',t);render();});
+$('#lista').addEventListener('contextmenu',e=>{const d=e.target.closest('details');if(!d)return;e.preventDefault();if(confirm('Excluir este trabalho?')){DB.set('trabalhos',trabalhos().filter(x=>x.id!=d.dataset.id));render();}});
+render();
+</script></body></html>

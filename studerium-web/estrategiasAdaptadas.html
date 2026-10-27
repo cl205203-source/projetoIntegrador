@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Studerium - Estratégias Adaptadas</title><link rel="stylesheet" href="turma-selecionada.css"><link rel="stylesheet" href="integracao.css"></head>
+<body><header class="app-header"><h1 class="app-title">Estratégias Adaptadas</h1><a href="turma-selecionada.html" class="icon-btn">⌂</a></header>
+<main class="pi-container"><table class="pi-table" id="tabela"><thead><tr><th>Data</th><th>Disciplina</th><th>Mudança</th><th>Resumo</th><th>Status</th><th></th></tr></thead><tbody></tbody></table><div class="pi-actions"><button class="btn-blue-pill" onclick="location.href='registrarMudanca.html'">Novo registro</button></div></main>
+<script src="app.js"></script><script>
+function render(){const lista=DB.get('estrategias',[]).map((e,i)=>({...e,i})).reverse();$('#tabela tbody').innerHTML=lista.length?lista.map(e=>`<tr><td>${fmt(e.data)}</td><td>${esc(e.disciplina)}</td><td>${esc(e.mudanca)}</td><td>${esc(e.resumo)}</td><td>${esc(e.status)}</td><td><button data-i="${e.i}" style="background:none;border:0;color:#fff;cursor:pointer">✕</button></td></tr>`).join(''):'<tr><td colspan="6" style="text-align:center">Nenhum registro ainda.</td></tr>';}
+$('#tabela').addEventListener('click',e=>{const b=e.target.closest('button[data-i]');if(!b)return;if(confirm('Apagar este registro?')){DB.set('estrategias',DB.get('estrategias',[]).filter((_,i)=>i!=b.dataset.i));render();}});render();
+</script></body></html>

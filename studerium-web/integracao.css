@@ -1,0 +1,28 @@
+
+/* Complemento da integração PI. Os arquivos CSS originais do siteTCC permanecem intactos. */
+.pi-container{max-width:1200px;margin:30px auto;padding:0 20px}
+.pi-grid{display:grid;grid-template-columns:2fr 1fr;gap:30px;align-items:start}
+.pi-card{background:#fbb040;border-radius:12px;padding:20px}
+.pi-card-pink{background:#e63878;border-radius:12px;padding:20px;color:#fff}
+.pi-row{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:11px 8px;border-bottom:2px solid rgba(255,255,255,.75)}
+.pi-row:last-child{border-bottom:0}
+.pi-field{background:#fbb040;border:0;border-radius:22px;padding:12px 18px;font-size:1rem;outline:none}
+.pi-fields{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.pi-table{width:100%;border-collapse:separate;border-spacing:4px}
+.pi-table th{background:#e63878;color:#fff;padding:12px;text-align:center}
+.pi-table td{background:#fbb040;padding:12px}
+.pi-table input,.pi-table textarea{width:100%;background:transparent;border:0;outline:0;font:inherit}
+.pi-tabs{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:4px}
+.pi-tab{background:#fbb040;color:#fff;padding:12px;text-align:center;cursor:pointer;font-weight:600}
+.pi-tab.active{background:#e63878}
+.pi-tab-body{background:#fbb040;min-height:220px;padding:12px}
+.pi-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pi-stat{border:1px solid rgba(255,255,255,.5);padding:12px;text-align:center}
+.pi-search{width:100%;padding:12px 18px;border:0;border-radius:22px;background:#bebebe;outline:0;margin-bottom:20px}
+.pi-actions{display:flex;justify-content:flex-end;margin-top:20px;gap:12px}
+.pi-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;max-width:900px;margin:20px auto}
+.pi-form-group{display:flex;align-items:center;gap:12px}
+.pi-form-group label{min-width:130px;text-align:right;font-weight:600}
+.pi-form-group .pi-field{flex:1}
+.pi-muted{text-align:center;color:#555}
+@media(max-width:800px){.pi-grid,.pi-form-grid{grid-template-columns:1fr}.pi-form-group{align-items:stretch;flex-direction:column}.pi-form-group label{text-align:left}.pi-tabs{grid-template-columns:1fr}.pi-row{flex-wrap:wrap}}

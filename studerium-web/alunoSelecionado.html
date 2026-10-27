@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Studerium - Aluno</title><link rel="stylesheet" href="turma-selecionada.css"><link rel="stylesheet" href="integracao.css"></head>
+<body><header class="app-header"><h1 class="app-title">Aluno Selecionado</h1><a href="turma-selecionada.html" class="icon-btn">⌂</a></header>
+<main class="pi-container"><div class="pi-grid">
+<section><div class="pi-tabs"><div class="pi-tab active">Faltas</div><div class="pi-tab">Notas</div><div class="pi-tab">Trabalhos Entregues</div></div><div class="pi-tab-body" id="tab-body"></div></section>
+<aside class="pi-card-pink"><h3 style="text-align:center">Painel de Detalhes</h3><div id="student-info" style="text-align:center;margin:20px 0"></div><div class="pi-stats"><div class="pi-stat">Média Faltas<br><strong id="media-faltas">0</strong></div><div class="pi-stat">Média Notas<br><strong id="media-notas">—</strong></div></div><button id="prioridade" class="btn-blue-pill" style="width:100%;margin-top:15px">MARCAR COMO PRIORIDADE</button></aside>
+</div><div class="pi-card" style="margin-top:30px"><h3 style="text-align:center;color:#132b50">Engajamento do aluno</h3><div id="engajamento" style="text-align:center;padding:30px">Acompanhe faltas, notas e trabalhos nas abas acima.</div></div></main>
+<script src="app.js"></script><script>
+const ra=params.get('ra'); const aluno=()=>alunos().find(a=>a.ra===ra);
+if(!aluno()){document.getElementById('student-info').textContent='Aluno não encontrado.';}
+else{
+ const a=aluno(), f=faltasInfo(ra), m=mediaNotas(ra);
+ $('#student-info').innerHTML=`<strong>${esc(a.nome)}</strong><br>RA: ${esc(a.ra)}`;
+ $('#media-faltas').textContent=f.total?`${f.faltas} (${Math.round(f.faltas/f.total*100)}%)`:'0';
+ $('#media-notas').textContent=m==null?'—':m.toFixed(1);
+ $('#prioridade').textContent=a.prioridade?'REMOVER PRIORIDADE':'MARCAR COMO PRIORIDADE';
+ $('#prioridade').onclick=()=>{const lista=alunos();const x=lista.find(v=>v.ra===ra);x.prioridade=!x.prioridade;DB.set('alunos',lista);location.reload();};
+ const tabs=[...document.querySelectorAll('.pi-tab')];
+ const abas=[
+ ()=>DB.get('faltas',[]).map(c=>`<div class="pi-row"><span>${fmt(c.data)} - ${esc(c.conteudo)}</span><span>${(c.ausentes||[]).includes(ra)?'Faltou':'Presente'}</span></div>`).join(''),
+ ()=>DB.get('notas',[]).filter(n=>n.notas && ra in n.notas).map(n=>`<div class="pi-row"><span>${esc(n.conteudo)} (peso ${n.peso})</span><strong>${n.notas[ra]}</strong></div>`).join(''),
+ ()=>DB.get('trabalhos',[]).map(w=>`<div class="pi-row"><span>${esc(w.nome)} (prazo ${fmt(w.prazo)})</span><span>${(w.entregues||[]).includes(ra)?'Entregue':'Pendente'}</span></div>`).join('')
+ ];
+ function abrir(i){tabs.forEach((t,j)=>t.classList.toggle('active',i===j));$('#tab-body').innerHTML=abas[i]()||'<p class="pi-muted">Sem registros.</p>';}
+ tabs.forEach((t,i)=>t.onclick=()=>abrir(i)); abrir(0);
+}
+</script></body></html>

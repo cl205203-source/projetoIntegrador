@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Studerium - Notas</title><link rel="stylesheet" href="turma-selecionada.css"><link rel="stylesheet" href="integracao.css"></head>
+<body><header class="app-header"><h1 class="app-title">Lançar Notas</h1><a href="turma-selecionada.html" class="icon-btn">⌂</a></header>
+<main class="pi-container"><div class="pi-fields"><input class="pi-field" id="peso" type="number" min="0.1" step="0.1" placeholder="Peso"><input class="pi-field" id="conteudo" placeholder="Conteúdo" style="flex:1"></div>
+<div class="pi-card"><div class="pi-row" style="font-weight:bold"><span>Aluno</span><span>Nota</span></div><div id="lista"></div></div><div class="pi-actions"><button class="btn-blue-pill" id="salvar">Salvar</button></div></main>
+<script src="app.js"></script><script>
+$('#lista').innerHTML=alunos().map(a=>`<div class="pi-row" style="color:#000"><span>${esc(a.nome)} <small>RA ${esc(a.ra)}</small></span><input type="number" min="0" max="10" step="0.1" data-ra="${esc(a.ra)}" placeholder="0.0" style="width:70px;text-align:center"></div>`).join('');
+$('#salvar').onclick=()=>{const peso=parseFloat($('#peso').value),conteudo=$('#conteudo').value.trim();if(!(peso>0)||!conteudo)return alert('Informe o peso e o conteúdo.');const notas={};for(const i of document.querySelectorAll('#lista input')){if(i.value==='')continue;const n=parseFloat(i.value);if(isNaN(n)||n<0||n>10)return alert('As notas devem estar entre 0 e 10.');notas[i.dataset.ra]=n;}if(!Object.keys(notas).length)return alert('Lance a nota de pelo menos um aluno.');DB.set('notas',[...DB.get('notas',[]),{data:hoje(),peso,conteudo,notas}]);alert('Notas salvas.');location.href='turma-selecionada.html';};
+</script></body></html>

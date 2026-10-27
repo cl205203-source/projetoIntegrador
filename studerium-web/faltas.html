@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Studerium - Faltas</title><link rel="stylesheet" href="turma-selecionada.css"><link rel="stylesheet" href="integracao.css"></head>
+<body><header class="app-header"><h1 class="app-title">Lançar Faltas</h1><a href="turma-selecionada.html" class="icon-btn">⌂</a></header>
+<main class="pi-container"><div class="pi-fields"><input class="pi-field" id="data" type="date"><input class="pi-field" id="conteudo" placeholder="Conteúdo" style="flex:1"></div><div class="pi-card"><div class="pi-row" style="font-weight:bold;color:#000"><span>Aluno</span><span>Presença</span></div><div id="lista"></div></div><div class="pi-actions"><button class="btn-blue-pill" id="salvar">Salvar</button></div></main>
+<script src="app.js"></script><script>
+$('#data').value=hoje();$('#lista').innerHTML=alunos().map(a=>`<label class="pi-row" style="color:#000"><span>${esc(a.nome)} <small>RA ${esc(a.ra)}</small></span><input type="checkbox" data-ra="${esc(a.ra)}" checked></label>`).join('');
+$('#salvar').onclick=()=>{const data=$('#data').value,conteudo=$('#conteudo').value.trim();if(!data||!conteudo)return alert('Informe a data e o conteúdo.');const checks=[...document.querySelectorAll('#lista input')];DB.set('faltas',[...DB.get('faltas',[]),{data,conteudo,presentes:checks.filter(i=>i.checked).map(i=>i.dataset.ra),ausentes:checks.filter(i=>!i.checked).map(i=>i.dataset.ra)}]);alert('Chamada salva.');location.href='turma-selecionada.html';};
+</script></body></html>

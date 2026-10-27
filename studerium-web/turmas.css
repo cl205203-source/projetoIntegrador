@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-yellow: #fbb040;
+    --primary-pink: #e63878;
+    --dark-blue: #132b50;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.app-header {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.app-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+.app-header-icons {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Menu Pop-up do Usuário */
+.user-dropdown {
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: var(--primary-pink);
+    border-radius: 20px;
+    padding: 30px 20px 20px 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    clip-path: polygon(0% 15px, 75% 15px, 85% 0%, 95% 15px, 100% 15px, 100% 100%, 0% 100%);
+}
+
+.user-dropdown.hidden {
+    display: none;
+}
+
+.user-dropdown p {
+    color: #f7a048;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.dropdown-avatar {
+    font-size: 3.5rem;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.btn-yellow-small {
+    background-color: var(--primary-yellow);
+    color: #4a4a4a;
+    border: none;
+    padding: 8px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.dashboard-content {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.turmas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.turma-btn {
+    background-color: var(--primary-yellow);
+    color: #4a4a4a;
+    text-decoration: none;
+    padding: 20px 10px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.turma-btn:hover {
+    transform: translateY(-3px);
+    background-color: #fca020;
+}

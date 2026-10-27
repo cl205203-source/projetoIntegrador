@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Studerium - Relatório</title><link rel="stylesheet" href="turma-selecionada.css"><link rel="stylesheet" href="integracao.css"></head>
+<body><header class="app-header"><h1 class="app-title">Relatório</h1><a href="turma-selecionada.html" class="icon-btn">⌂</a></header>
+<main class="pi-container"><table class="pi-table" id="tabela"><thead><tr><th>Nome</th><th>Média</th><th>Relato quantitativo</th></tr></thead><tbody></tbody></table></main>
+<script src="app.js"></script><script>
+const relatos=DB.get('relatos',{});$('#tabela tbody').innerHTML=alunos().map(a=>{const m=mediaNotas(a.ra);return `<tr><td>${esc(a.nome)}<br><small>RA ${esc(a.ra)}</small></td><td style="text-align:center">${m==null?'—':m.toFixed(1)}</td><td><textarea data-ra="${esc(a.ra)}" rows="3" placeholder="Relatório">${esc(relatos[a.ra]||'')}</textarea></td></tr>`}).join('');
+$('#tabela').addEventListener('input',e=>{if(e.target.dataset.ra){relatos[e.target.dataset.ra]=e.target.value;DB.set('relatos',relatos);}});
+</script></body></html>

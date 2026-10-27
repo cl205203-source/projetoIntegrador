@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-yellow: #fbb040;
+    --primary-pink: #e63878;
+    --dark-blue: #132b50;
+    --pill-blue: #0b50a1;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.app-header {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.app-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+.app-header > .icon-btn {
+    position: absolute;
+    right: 40px;
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.turma-detalhes-content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.turma-main-layout {
+    display: flex;
+    gap: 40px;
+}
+
+.left-section { flex: 1; }
+
+.search-bar {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.search-bar input {
+    width: 100%;
+    background-color: #bebebe;
+    border: none;
+    padding: 12px 40px 12px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-bar i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    font-size: 1.2rem;
+}
+
+.alunos-table-container {
+    background-color: var(--primary-yellow);
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 350px;
+}
+
+.table-header {
+    display: flex;
+    background-color: var(--primary-yellow);
+    padding: 12px 20px;
+    font-weight: bold;
+    color: white;
+    font-size: 1.3rem;
+    border-bottom: 3px solid white;
+}
+
+.col-nome { flex: 1; }
+.col-ra { width: 100px; text-align: center; }
+
+.table-row {
+    display: flex;
+    padding: 12px 20px;
+    align-items: center;
+    border-bottom: 2px solid white;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.col-nome-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.star-icon { color: var(--pill-blue); }
+.col-ra-content { width: 100px; text-align: center; }
+
+.btn-blue-action {
+    background-color: var(--pill-blue);
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.right-panel { width: 250px; }
+
+.side-menu-card {
+    background-color: var(--primary-pink);
+    border-radius: 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.side-menu-card h3 {
+    color: black;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.btn-blue-pill {
+    background-color: var(--pill-blue);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.btn-blue-pill:hover {
+    background-color: #083c7a;
+}
